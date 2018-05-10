@@ -1,11 +1,11 @@
 <% provide(:title, "Log in") %>
 <div class="ui middle aligned center aligned grid">
   <div class="column">
-    <h1 class="ui violet image header">
-      <div class="content">Log in</div>
-    </h1>
     <%= form_for(:session, url: login_path, html: {class: "ui large form"} )do |f| %>
-      <div class="ui segment">
+      <div class="ui raised padded inverted segment">
+        <div class="ui huge header">
+          <i id="login_icon" class="ui icon coffee"></i>
+        </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
@@ -18,8 +18,8 @@
             <%= f.password_field :password, required: 'required', placeholder: 'password' %>
           </div>
         </div>
+          <%= f.submit "Log in", :class=>"ui inverted fluid large button" %>
       </div>
-      <%= f.submit "Log in", :class=>"ui fluid large violet submit button" %>
     <% end %>
   </div>
 </div>

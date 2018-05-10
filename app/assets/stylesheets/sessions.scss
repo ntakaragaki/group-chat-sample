@@ -2,15 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $import-google-fonts: false;
+$theme-color: #512DA8;
 @import 'semantic-ui';
 
 body {
-  background-color: #DADADA;
-}
-body > .grid {
-  height: 100%;
+  background-color: $theme-color ;
+  .grid {
+    height: 100%;
+  }
 }
 
 .column {
   max-width: 450px;
+}
+
+.ui.inverted.segment {
+  background-color: $theme-color;
+}
+
+#login_icon {
+  font-size: 3em;
 }
