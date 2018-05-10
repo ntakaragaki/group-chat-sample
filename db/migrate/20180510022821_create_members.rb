@@ -4,8 +4,8 @@ class CreateMembers < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.integer :group_id
 
-      add_foreign_key :members, :user
-      add_foreign_key :members, :group
+      add_foreign_key :members, :users
+      add_foreign_key :members, :groups
     end
   end
 end
