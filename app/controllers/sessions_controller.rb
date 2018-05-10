@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # ログイン処理
       session[:user_id] = user.id
-      render 'chat'
+      
+      redirect_to chat_group_path()
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'

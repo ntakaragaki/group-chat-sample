@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(login_id: "testuser1", password: "foobar")
+Group.create!()
+Member.create!(user_id:1, group_id:1)
+Chat.create!(text:"あのイーハトーヴォの透き通ったアレ", user_id:1, group_id:1, date:"1999/12/31")
