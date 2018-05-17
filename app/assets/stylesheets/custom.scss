@@ -81,3 +81,23 @@ html, body
 #message-input {
   box-shadow: none;
 }
+
+.chat {
+  min-width: 120px;
+  max-width: 60%;
+  background: $theme-color-pastel;
+  margin-top:0.5rem;
+  margin-bottom:1.5rem;
+  &.self {
+    margin-left: auto;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      margin-top: -15px;
+      border: 15px solid transparent;
+      border-left: 15px solid $theme-color-pastel;
+    }
+  }
+}

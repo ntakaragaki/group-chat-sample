@@ -14,9 +14,10 @@ ActiveRecord::Schema.define(version: 20180510025028) do
 
   create_table "chats", force: :cascade do |t|
     t.string "text"
-    t.integer "user_id"
-    t.integer "group_id"
-    t.date "date"
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -25,12 +26,12 @@ ActiveRecord::Schema.define(version: 20180510025028) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "group_id"
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "login_id"
+    t.string "login_id", null: false
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

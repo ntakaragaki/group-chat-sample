@@ -1,5 +1,5 @@
 User.create!(login_id: "testuser1", password: "foobar")
 Group.create!()
 Member.create!(user_id:1, group_id:1)
-Chat.create!(text:"あのイーハトーヴォの透き通ったアレ", user_id:1, group_id:1, date:"1999/12/31")
-Chat.create!(text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit....", user_id:1, group_id:1, date:"2018/4/31")
+Chat.create!(text:"あのイーハトーヴォの透き通ったアレ", user_id:1, group_id:1)
+Chat.create!(text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit....", user_id:1, group_id:1)

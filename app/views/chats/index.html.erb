@@ -17,11 +17,14 @@
         </li>
       </ul>
     </nav>
-    <div class="col-md-9 ml-sm-auto col-lg-10 chat-list d-flex flex-column h-100">
+    <div class="col-md-9 ml-sm-auto col-lg-10 p-0 bg-white d-flex flex-column h-100">
       <header class="header chat-header">
         <div class="lead">Group 1</div>
         <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light">Sign out</a>
       </header>
+      <section class="p-5 chat-list">
+        <%= render @chats if @chats.any? %>
+      </section>
       <footer class="m-3 mt-auto border-top border-dark">
         <div class="container-fluid">
           <div>
