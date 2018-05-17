@@ -97,6 +97,15 @@ html, body
       border-left: 15px solid #FFF;
     }
   }
+  &.other:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-right: 15px solid #FFF;
+  }
 }
 
 footer {

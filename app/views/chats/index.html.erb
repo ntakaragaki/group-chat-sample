@@ -2,8 +2,8 @@
   <div class="row h-100">
     <aside class="col-md-2 d-none d-md-block sidebar">
       <header class="account text-light">
-        <%= image_tag("icon.png", alt: "TestUser1", class: "account_icon d-inline-block") %>
-        <span class="lead d-flex">TestUser1</span>
+        <%= image_tag("icon.png", class: "account_icon d-inline-block") %>
+        <span class="lead d-flex"><%= @current_user.login_id %></span>
       </header>
       <div class="p-3 text-light">
         <h3>Members</h3>
