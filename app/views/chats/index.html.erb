@@ -1,35 +1,27 @@
 <div class="container-fluid h-100">
   <div class="row h-100">
-    <nav class="col-md-2 d-none d-md-block sidebar">
+    <aside class="col-md-2 d-none d-md-block sidebar">
       <header class="account text-light">
         <%= image_tag("icon.png", alt: "TestUser1", class: "account_icon d-inline-block") %>
         <span class="lead d-flex">TestUser1</span>
       </header>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">TestUser1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">TestUser2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">TestUser3</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="col-md-9 ml-sm-auto col-lg-10 p-0 bg-white d-flex flex-column h-100">
+      <div class="p-3 text-light">
+        <h3>Members</h3>
+        <ul class="list-group list-group-flush">
+          <%= render @users if @users.any? %>
+        </ul>
+      </div>
+    </aside>
+    <div class="col-md-9 ml-sm-auto col-lg-10 p-0 d-flex flex-column h-100 main">
       <header class="header chat-header">
-        <div class="lead">Group 1</div>
+        <div class="lead text-light p-3">Group <%= @group.id %></div>
         <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light">Sign out</a>
       </header>
       <section class="p-5 chat-list">
         <%= render @chats if @chats.any? %>
       </section>
-      <footer class="m-3 mt-auto border-top border-dark">
-        <div class="container-fluid">
-          <div>
-          <%= text_field :page, :name,id:'message-input', class: 'form-control form-control-lg border-0', placeholder: 'メッセージを入力' %>
-        </div>
+      <footer class="p-4 mt-auto text-dark">
+        <%= text_field :page, :name,id:'message-input', class: 'form-control form-control-lg border-0 rounded-0 bg-transparent', placeholder: 'メッセージを入力' %>
       </footer>
     </div>
   </div>

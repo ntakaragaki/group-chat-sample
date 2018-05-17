@@ -45,7 +45,6 @@ html, body
   bottom: 0;
   left: 0;
   padding: 0;
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   min-width: 240px;
 }
 
@@ -67,7 +66,10 @@ html, body
   display: flex;
   -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
   align-items: center; /* 縦方向中央揃え */
-  background-color: $sub-color1;
+  background-color: $sub-color3;
+}
+.main {
+  background-color: $sub-color2;
 }
 
 .sign-out {
@@ -76,10 +78,6 @@ html, body
   align-items: center; /* 縦方向中央揃え */
   background-color: $sub-color1;
   height: $image-size;
-}
-
-#message-input {
-  box-shadow: none;
 }
 
 .chat {
@@ -96,7 +94,15 @@ html, body
       left: 100%;
       margin-top: -15px;
       border: 15px solid transparent;
-      border-left: 15px solid #f8f9fa;
+      border-left: 15px solid #FFF;
     }
   }
+}
+
+footer {
+  background-color: $sub-color2;
+}
+#message-input {
+  box-shadow: none;
+  border-top:1px solid $base-color !important;
 }
