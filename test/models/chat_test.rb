@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class ChatTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @user = users(:testuser1)
+  end
+
+  test "should be valid" do
+  end
 end
