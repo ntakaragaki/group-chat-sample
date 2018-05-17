@@ -1,3 +1,3 @@
 class Group < ApplicationRecord
-  has_many :chat
+  has_many :chats
 end

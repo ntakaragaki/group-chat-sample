@@ -23,7 +23,7 @@
         <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light">Sign out</a>
       </header>
       <section class="p-5 chat-list">
-        <% if @group.chat.any? %>
+        <% if @group.chats.any? %>
           <%= render @chats %>
         <% end %>
       </section>
