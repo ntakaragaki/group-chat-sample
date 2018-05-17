@@ -2,9 +2,9 @@ class CreateChats < ActiveRecord::Migration[5.1]
   def change
     create_table :chats do |t|
       t.string :text
-      t.integer :user_id
-      t.integer :group_id
-      t.date :date
+      t.integer :user_id, :null => false
+      t.integer :group_id, :null => false
+      t.timestamps
 
       add_foreign_key :chats, :users
       add_foreign_key :chats, :groups
