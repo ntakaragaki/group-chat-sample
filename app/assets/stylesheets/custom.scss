@@ -26,18 +26,7 @@ html, body
   &.form label {
     font-size: 1.25rem;
   }
-  &.side {
-    & aside {
-      border-right: 1px solid $sub-color2;
-      padding: 1rem;
-    }
-  }
 }
-
-.chat-list {
-  background-color: $sub-color2;
-}
-
 .sidebar {
   background-color: $sub-color4;
   position: fixed;
@@ -47,7 +36,6 @@ html, body
   padding: 0;
   min-width: 240px;
 }
-
 .account {
   background-color: $base-color;
   line-height: $image-size;
@@ -55,12 +43,10 @@ html, body
   -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
   align-items: center; /* 縦方向中央揃え */
 }
-
 .account_icon {
   height: $image-size;
   width: $image-size;
 }
-
 .chat-header {
   height: $image-size;
   display: flex;
@@ -69,47 +55,20 @@ html, body
   background-color: $sub-color3;
 }
 .main {
-  background-color: $sub-color2;
+  background-color: $white;
 }
-
+.user-name {
+  font-size: 1rem;
+}
+time {
+  font-size: .7rem;
+}
 .sign-out {
   display: flex;
   -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
   align-items: center; /* 縦方向中央揃え */
   background-color: $sub-color1;
   height: $image-size;
-}
-
-.chat {
-  min-width: 120px;
-  max-width: 60%;
-  margin-top:0.5rem;
-  margin-bottom:1.5rem;
-  &.self {
-    margin-left: auto;
-    &:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      margin-top: -15px;
-      border: 15px solid transparent;
-      border-left: 15px solid #FFF;
-    }
-  }
-  &.other:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -30px;
-    margin-top: -15px;
-    border: 15px solid transparent;
-    border-right: 15px solid #FFF;
-  }
-}
-
-footer {
-  background-color: $sub-color2;
 }
 #message-input {
   box-shadow: none;

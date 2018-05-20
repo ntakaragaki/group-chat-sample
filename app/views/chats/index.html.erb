@@ -1,29 +1,31 @@
 <div class="container-fluid h-100">
   <div class="row h-100">
-    <aside class="col-md-2 d-none d-md-block sidebar">
+    <nav class="col-md-2 d-none d-md-block sidebar">
       <header class="account text-light">
         <%= image_tag("icon.png", class: "account_icon d-inline-block") %>
         <span class="lead d-flex"><%= @current_user.login_id %></span>
       </header>
       <div class="p-3 text-light">
-        <h3>Members</h3>
-        <ul class="list-group list-group-flush">
+        <h2>Members</h2>
+        <ol class="list-group list-group-flush">
           <%= render @users if @users.any? %>
-        </ul>
+        </ol>
       </div>
-    </aside>
-    <div class="col-md-9 ml-sm-auto col-lg-10 p-0 d-flex flex-column h-100 main">
+    </nav>
+    <article class="col-md-9 ml-sm-auto col-lg-10 p-0 d-flex flex-column h-100 main">
       <header class="header chat-header">
-        <div class="lead text-light p-3">Group <%= @group.id %></div>
+        <h2 class="lead text-light p-4">Group <%= @group.id %></h2>
         <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light">Sign out</a>
       </header>
-      <section class="p-5 chat-list">
-        <%= render @chats if @chats.any? %>
-      </section>
+      <main>
+        <ul class="list-group list-group-flush">
+          <%= render @chats if @chats.any? %>
+        </ul>
+      </main>
       <footer class="p-4 mt-auto text-dark">
         <%= text_field :page, :name,id:'message-input', class: 'form-control form-control-lg border-0 rounded-0 bg-transparent', placeholder: 'メッセージを入力' %>
       </footer>
-    </div>
+    </article>
   </div>
 </div>
 

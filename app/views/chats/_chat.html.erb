@@ -1,6 +1,7 @@
-<div id="chat-<%= chat.id %>"
-     class="card text-dark chat <%= (chat.user_id == current_user.id) ? "self" : "other" %>">
-  <div class="card-body">
-    <p><%= chat.text %></p>
+<li id="chat-<%= chat.id %>" class="list-group-item list-group-item-action">
+  <div>
+    <h3 class="user-name font-weight-bold d-inline-block"><%= chat.user.login_id %></h3>
+    <time><%= chat.created_at.to_s(:short) %></time>
   </div>
-</div>
+  <span class="text-secondary"><%= chat.text %></span>
+</li>
