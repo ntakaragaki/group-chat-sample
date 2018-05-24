@@ -23,7 +23,12 @@
         </ul>
       </main>
       <footer class="p-4 mt-auto text-dark">
-        <%= text_field :page, :name,id:'message-input', class: 'form-control form-control-lg border-0 rounded-0 bg-transparent', placeholder: 'メッセージを入力' %>
+        <%= form_for(:session) do |f| %>
+          <div class="d-flex justify-content-between">
+            <%= text_field :page, :name, class: 'form-control form-control-lg m-1', placeholder: 'メッセージを入力' %>
+            <%= f.submit "送信", class: "btn btn-lg btn-outline-secondary m-1" %>
+          </div>
+        <% end %>
       </footer>
     </article>
   </div>
