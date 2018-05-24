@@ -11,7 +11,6 @@ gem 'rails', '~> 5.1.6'
 gem 'bcrypt','~> 3.1.11'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
-gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

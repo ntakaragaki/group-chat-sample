@@ -18,14 +18,16 @@
         <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light">Sign out</a>
       </header>
       <main>
-        <ul class="list-group list-group-flush">
+        <ul id="chat_list" class="list-group list-group-flush">
           <%= render @chats if @chats.any? %>
         </ul>
       </main>
       <footer class="p-4 mt-auto text-dark">
-        <%= form_for(:session) do |f| %>
+        <%= form_for (:chat), html: {id: 'message_form'} do |f| %>
           <div class="d-flex justify-content-between">
-            <%= text_field :page, :name, class: 'form-control form-control-lg m-1', placeholder: 'メッセージを入力' %>
+            <%= f.text_field :text, id: 'chat_input', class: 'form-control form-control-lg m-1', placeholder: 'メッセージを入力' %>
+            <%= f.hidden_field :user_login_id, value: current_user.login_id %>
+            <%= f.hidden_field :group_id, value: @group.id %>
             <%= f.submit "送信", class: "btn btn-lg btn-outline-secondary m-1" %>
           </div>
         <% end %>
@@ -33,4 +35,3 @@
     </article>
   </div>
 </div>
-
