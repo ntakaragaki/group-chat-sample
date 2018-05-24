@@ -1,28 +1,28 @@
 <div class="container-fluid h-100">
   <div class="row h-100">
-    <nav class="col-md-2 d-none d-md-block sidebar">
+    <nav class="col-md-3 ml-sm-auto col-lg-2 d-none d-md-block sidebar">
       <header class="account text-light">
         <%= image_tag("icon.png", class: "account_icon d-inline-block") %>
-        <span class="lead d-flex"><%= @current_user.login_id %></span>
+        <span class="lead d-inline-block pl-3"><%= @current_user.login_id %></span>
       </header>
-      <div class="p-3 text-light">
-        <h2>Members</h2>
+      <div class="text-light p-3">
+        <h2 class="lead">Members</h2>
         <ol class="list-group list-group-flush">
           <%= render @users if @users.any? %>
         </ol>
       </div>
     </nav>
-    <article class="col-md-9 ml-sm-auto col-lg-10 p-0 d-flex flex-column h-100 main">
-      <header class="header chat-header">
-        <h2 class="lead text-light p-4">Group <%= @group.id %></h2>
-        <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light">Sign out</a>
+    <article class="col-md-9 ml-sm-auto col-lg-10 p-0 d-flex flex-column h-100 bg-white">
+      <header class="col-md-9 ml-sm-auto col-lg-10 pr-0 chat-header d-flex">
+        <h2 class="lead text-light va-middle m-0">Group <%= @group.id %></h2>
+        <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light va-middle">Sign out</a>
       </header>
-      <main>
+      <main class="mt-auto pb-5">
         <ul id="chat_list" class="list-group list-group-flush">
           <%= render @chats if @chats.any? %>
         </ul>
       </main>
-      <footer class="p-4 mt-auto text-dark">
+      <footer class="col-md-9 ml-sm-auto col-lg-10 pb-0 text-dark bg-white sticky-footer">
         <%= form_for (:chat), html: {id: 'message_form'} do |f| %>
           <div class="d-flex justify-content-between">
             <%= f.text_field :text, id: 'chat_input', class: 'form-control form-control-lg m-1', placeholder: 'メッセージを入力' %>
