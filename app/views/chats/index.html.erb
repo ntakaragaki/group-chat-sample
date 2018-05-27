@@ -8,7 +8,7 @@
       <div class="text-light p-3">
         <h2 class="lead">Members</h2>
         <ol class="list-group list-group-flush">
-          <%= render @users if @users.any? %>
+          <%= render @users %>
         </ol>
       </div>
     </nav>
@@ -19,7 +19,7 @@
       </header>
       <main class="mt-auto pb-5">
         <ul id="chat_list" class="list-group list-group-flush">
-          <%= render @chats if @chats.any? %>
+          <%= render @chats %>
         </ul>
       </main>
       <footer class="col-md-9 ml-sm-auto col-lg-10 pb-0 text-dark bg-white sticky-footer">
