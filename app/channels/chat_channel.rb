@@ -4,7 +4,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+    logger.debug "デバッグ情報"
   end
 
   def put_message(data)

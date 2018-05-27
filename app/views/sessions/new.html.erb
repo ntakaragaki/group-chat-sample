@@ -1,8 +1,8 @@
 <div class="container d-flex h-100 w-100 flex-column">
   <div class="row h-100">
     <div class="col login form">
-      <%= form_for(:session, url: login_path, html: {class: "form-signin"} )do |f| %>
-        <h1>Group chat</h1>
+      <%= form_for(:session, url: login_path, html: {class: "form-signin"}) do |f| %>
+        <h1 class="text-center mb-5">Group chat</h1>
         <div class="form-group row">
           <label for="session_login_id" class="col-sm-3 col-form-label">ID</label>
           <div class="col-sm-9">
@@ -15,7 +15,7 @@
             <%= f.password_field :password, required: 'required', placeholder: 'password', class:'form-control form-control-lg' %>
           </div>
         </div>
-        <%= f.submit "Log in", :class=>"btn btn-outline-warning btn-lg d-block mx-auto" %>
+        <%= f.submit "Log in", :class=>"btn btn-outline-warning btn-lg d-block mx-auto mt-5" %>
       <% end %>
     </div>
   </div>
