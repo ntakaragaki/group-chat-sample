@@ -66,8 +66,7 @@ class ChatChannel < ApplicationCable::Channel
       JSON.parse(res.body)
     end
 
-    # Groupに設定されているAppIdを取得する。
-    # なければ新規発行してGroupに設定する。
+    # App Idを新規発行する
     def get_new_app_id(data)
       logger.debug("start get_app_id")
       register_payload = {
