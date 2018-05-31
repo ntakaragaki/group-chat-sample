@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(login_id: params[:session][:login_id])
+    logger.debug(params)
     if user && user.authenticate(params[:session][:password])
       # ログイン処理
       login user

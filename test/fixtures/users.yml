@@ -1,9 +1,9 @@
-one:
+user1:
   id: 1
   login_id: testuser1
-  password: foobar
+  password_digest: <%= User.digest('foobar') %>
 
-two:
+user2:
   id: 2
   login_id: testuser2
-  password: foobar
+  password_digest: <%= User.digest('foobar') %>
