@@ -3,7 +3,7 @@
     <nav class="col-md-3 ml-sm-auto col-lg-2 d-none d-md-block sidebar">
       <header class="account text-light">
         <%= image_tag("icon.png", class: "account_icon d-inline-block") %>
-        <span class="lead d-inline-block pl-3"><%= @current_user.login_id %></span>
+        <span class="lead d-inline-block pl-3"><%= current_user.login_id %></span>
       </header>
       <div class="text-light p-3">
         <h2 class="lead">Members</h2>
@@ -15,7 +15,7 @@
     <article class="col-md-9 ml-sm-auto col-lg-10 p-0 d-flex flex-column h-100 bg-white">
       <header class="col-md-9 ml-sm-auto col-lg-10 pr-0 chat-header d-flex">
         <h2 class="lead text-light va-middle m-0">Group <%= @group.id %></h2>
-        <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light va-middle">Sign out</a>
+        <%= link_to "Sign out", logout_path, {:method => :delete, :class => "sign-out ml-auto btn btn-link btn-lg rounded-0 text-light va-middle"} %>
       </header>
       <main class="mt-auto pb-5">
         <ul id="chat_list" class="list-group list-group-flush">
