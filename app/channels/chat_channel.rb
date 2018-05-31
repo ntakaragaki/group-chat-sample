@@ -41,7 +41,7 @@ class ChatChannel < ApplicationCable::Channel
       payload = {
           "language" => "ja-JP",
           "botId" => "Chatting",
-          "appId" => "3195d9b0-a082-4fe9-b9a1-c033fc9ca5d8",
+          "appId" => APP_ID,
           "voiceText" => data['message']['text'],
           "appRecvTime" => "2015-05-05 13:30:00",
           "appSendTime" => "2015-05-05 13:31:00",
