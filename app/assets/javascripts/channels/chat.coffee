@@ -6,13 +6,20 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
+    # 表示する時刻を作成
+    d = new Date
+    month = d.getMonth() + 1
+    date = d.getDate()
+    hours = d.getHours()
+    minutes = d.getMinutes()
+
     # TODO: _chat.html.erbを組み上げているだけ。どこかにまとめたい。
     div = document.createElement('div')
     h3 = document.createElement('h3')
     h3.textContent = data.user_login_id
     h3.className = "user-name font-weight-bold d-inline-block"
     time = document.createElement('time')
-    time.textContent = "ちょい前"
+    time.textContent = "#{month}/#{date} #{hours}:#{minutes}"
     div.appendChild(h3)
     div.appendChild(time)
     span = document.createElement('span')
