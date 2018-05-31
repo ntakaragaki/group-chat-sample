@@ -23,6 +23,8 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
     li.appendChild(div)
     li.appendChild(span)
     document.getElementById('chat_list').appendChild(li)
+    
+    $("html,body").animate({scrollTop:$(li).offset().top});
 
   put_message: (msg) ->
     @perform('put_message', { message: msg })
