@@ -2,7 +2,10 @@
   <div class="row h-100">
     <div class="col login form">
       <%= form_for(:session, url: login_path, html: {class: "form-signin"}) do |f| %>
-        <h1 class="text-center mb-5">Group chat</h1>
+        <h1 class="text-center mb-3">Group chat</h1>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
         <div class="form-group row">
           <label for="session_login_id" class="col-sm-3 col-form-label">ID</label>
           <div class="col-sm-9">
