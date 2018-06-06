@@ -3,7 +3,7 @@ class ChatsController < ApplicationController
   before_action :is_member
   
   def index
-    @current_user = User.find(params[:session][:user_id])
+    @current_user = User.find(session[:user_id])
     @group = Group.find(params[:group_id])
     @chats = @group.chats
     @users = @group.users
