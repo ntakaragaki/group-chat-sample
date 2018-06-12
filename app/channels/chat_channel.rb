@@ -16,6 +16,7 @@ class ChatChannel < ApplicationCable::Channel
     # 画面から入力したメッセージの配信
     logger.debug(data)
     ChatChannel.broadcast_to("message", data["message"])
+    save_chat(data["message"]["user_id"], data["message"]["group_id"], data["message"]["text"])
 
     # TODO: Controllerで呼ぶ
     group = Group.find(data["message"]["group_id"])
@@ -28,7 +29,7 @@ class ChatChannel < ApplicationCable::Channel
       "appId" => app_id,
       "voiceText" => data["message"]["text"],
       # to_sでフォーマットするとなぜかUTCになってしまうのでstrftimeを使う
-      "appRecvTime" => group.last_api_receive_time.strftime("%Y-%m-%d %H:%M:%S"),
+      "appRecvTime" => group.last_api_receive_time != nil ? group.last_api_receive_time.strftime("%Y-%m-%d %H:%M:%S") : "",
       "appSendTime" => Time.zone.now.strftime("%Y-%m-%d %H:%M:%S"),
     }
     parse_res = apipost(API_DIALOGUE_URL, dialog_payload)
@@ -42,6 +43,7 @@ class ChatChannel < ApplicationCable::Channel
       "group_id" => data["message"]["group_id"]
     }
     ChatChannel.broadcast_to("message", api_response)
+    save_chat(1, data["message"]["group_id"], api_response["text"])
   end
 
   private
@@ -75,5 +77,21 @@ class ChatChannel < ApplicationCable::Channel
       }
       response = apipost(API_REGISTER_URL, register_payload)
       response["appId"]
+    end
+
+    def save_chat(user_id, group_id, text)
+      @chat = Chat.new
+      unless user_id.nil?
+        @chat.user_id = user_id
+      end
+      @chat.group_id = group_id
+      @chat.text = text
+      logger.debug(@chat.user_id)
+      logger.debug(@chat.group_id)
+      if @chat.save
+        logger.debug("保存したよ")
+      else
+        logger.debug("保存失敗したよ")
+      end
     end
 end

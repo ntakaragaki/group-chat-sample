@@ -3,6 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # User_id=1をAPI用に予約したため、このIDだけはログインできないようにする
+    if params[:session][:login_id] == 1
+      flash.now[:danger] = 'Invalid email/password combination'
+      render 'new'
+    end
+
     user = User.find_by(login_id: params[:session][:login_id])
     if user && user.authenticate(params[:session][:password])
       # ログイン処理
