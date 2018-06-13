@@ -6,8 +6,9 @@ class CreateChats < ActiveRecord::Migration[5.1]
       t.integer :group_id, :null => false
       t.timestamps
 
-      add_foreign_key :chats, :users
-      add_foreign_key :chats, :groups
+      # TODO: なぜかHerokuではCREATE TABLEの前にALTER TABLEしてしまう。
+      # add_foreign_key :chats, :users
+      # add_foreign_key :chats, :groups
     end
   end
 end
