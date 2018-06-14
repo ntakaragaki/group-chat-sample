@@ -55,6 +55,10 @@ time {
 .sign-out {
   background-color: $sub-color1;
   height: $image-size;
+  &.btn-link:hover {
+    background-color: $base-color;
+    text-decoration: none;
+  }
 }
 .chat-header {
   height: $image-size;

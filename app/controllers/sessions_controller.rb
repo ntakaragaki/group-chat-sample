@@ -20,9 +20,20 @@ class SessionsController < ApplicationController
     end
   end
   
+  def destroy
+    log_out if logged_in?
+    redirect_to root_url
+  end
+
   private
 
     def user_params
       params.require(:session).permit(:login_id, :user_id)
+    end
+
+    # 現在のユーザーをログアウトする
+    def log_out
+      session.delete(:user_id)
+      @current_user = nil
     end
 end

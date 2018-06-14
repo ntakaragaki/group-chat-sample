@@ -14,8 +14,10 @@
     </nav>
     <article class="col-md-9 ml-sm-auto col-lg-10 p-0 d-flex flex-column h-100 bg-white">
       <header class="col-md-9 ml-sm-auto col-lg-10 pr-0 chat-header d-flex">
-        <h2 class="lead text-light va-middle m-0">Group <%= @group.id %></h2>
-        <a href="" class="sign-out ml-auto btn btn-link btn-lg rounded-0 text-light va-middle">Sign out</a>
+        <h2 class="lead text-light va-middle m-0 w-100">Group <%= @group.id %></h2>
+        <%= form_tag('/logout', :method => :delete, :class => "float-right")  do %>
+          <%= submit_tag "Sign out", class: "sign-out ml-auto btn btn-link btn-lg rounded-0 text-light va-middle" %>
+        <% end %>
       </header>
       <main class="mt-auto pb-5">
         <ul id="chat_list" class="list-group list-group-flush">
