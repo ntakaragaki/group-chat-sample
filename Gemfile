@@ -29,6 +29,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
+# CVE-2018-16468 対応
+gem "loofah", ">= 2.2.3"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
